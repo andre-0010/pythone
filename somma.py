@@ -1,4 +1,4 @@
-print(f"La somma è {int(input('Passami il primo valore: ')) + int(input('Passami il secondo valore: '))}")
+print(f"""La somma è {int(input('Passami il primo valore: ')) + int(input('Passami il secondo valore: '))}""")
 
 #valore_1 , valore_2 = input("passami il primo valore: "),input("passami il secondo valore: ")
 #v1=int(valore_1)
