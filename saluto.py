@@ -1,2 +1,2 @@
-nome="andrea kanakciu"
+nome="andrea"
 print("mi chiamo", nome)
