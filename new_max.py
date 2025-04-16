@@ -1,6 +1,6 @@
 import os
 
-fileName =input("inserisci nome file") #"Massimo.txt"
+fileName =input("inserisci nome file")
 if os.path.exists(fileName):
     
     file = open(fileName,"r")
@@ -10,8 +10,10 @@ if os.path.exists(fileName):
     for x in temp:
         Lines.append(float(x))
 
+
+
     numberMax = {}
-    nTot = 0
+    nTot = -1
     somma = 0
     for line in Lines:
         nTot += 1
@@ -19,7 +21,7 @@ if os.path.exists(fileName):
         if line == max(Lines):
             numberMax[nTot]=line
 
-    print(numberMax, somma/nTot)
+    print("Numeri massimi: ", numberMax, "media: ", somma/nTot)
 else:
     name=os.getcwd()
     print("file non trovato: ", name)
