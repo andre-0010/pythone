@@ -1,28 +1,33 @@
 import os
 
-fileName =input("inserisci nome file")
+fileName ="Massimo.txt" #input("inserisci nome file")
 if os.path.exists(fileName):
+    with open(fileName, "r") as file:
+       temp = file.readlines()
+       Lines = [float(line.strip()) for line in temp]
     
-    file = open(fileName,"r")
-    temp = file.readlines()
-    Lines=[]
+    massimo = max(Lines)
+    MaxValuesIndex = [index for index, value in enumerate(Lines) if value==massimo]
+    print(f"Numero Massimo: {massimo} in posizione: {MaxValuesIndex}| Media: {sum(Lines)/len(Lines)}") 
+    
 
-    for x in temp:
-        Lines.append(float(x))
+    #Lines=enumerate(Lines)
+    #print(list(Lines))
+    #Lines=[Lines if Lines.values==max()]
 
+    #numberMax = {}
+    #nTot = 0
+    #somma = 0
+    
+    # for line in Lines:
+    #     nTot += 1
+    #     somma += line #line.get()
+    #     if line == max(Lines): # if!=Lines.values()
+    #         numberMax[nTot]=line #del Lines[nTot]
+    
+    #print("Numeri massimi: ", numberMax, "media: ", somma/nTot)
 
-
-    numberMax = {}
-    nTot = -1
-    somma = 0
-    for line in Lines:
-        nTot += 1
-        somma += line
-        if line == max(Lines):
-            numberMax[nTot]=line
-
-    print("Numeri massimi: ", numberMax, "media: ", somma/nTot)
 else:
     name=os.getcwd()
-    print("file non trovato: ", name)
+    print(f"file {fileName} non trovato in: ", name)
 
