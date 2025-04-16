@@ -1,10 +1,9 @@
 import os
 
-fileName ="Massimo.txt" #input("inserisci nome file")
+fileName =input("inserisci nome file")
 if os.path.exists(fileName):
     with open(fileName, "r") as file:
-       temp = file.readlines()
-       Lines = [float(line.strip()) for line in temp]
+       Lines = [float(line.strip()) for line in file.readlines()]
     
     massimo = max(Lines)
     MaxValuesIndex = [index for index, value in enumerate(Lines) if value==massimo]
