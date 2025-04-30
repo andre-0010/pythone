@@ -16,4 +16,6 @@ for tr in table.contents[2:-2]:
         sigl = tds[7].get_text()
         densita = round(float((tds[5].get_text().replace(".","")).replace(",",".")), 1)
         densitaCalcolata = round(resi/kmq, 1)
-        print(f"{sigl} {prov:25s} {resi:9d}  {kmq:6d} {densitaCalcolata} {densita} {False if densitaCalcolata != densita else True}")
+        print(f"-"*70)
+        print(f"{sigl:3s} {prov:25s} {resi:9d} {kmq:6d} {densitaCalcolata:7.1f} {densita:7.1f} {False if densitaCalcolata != densita else True}")
+        
